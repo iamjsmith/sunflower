@@ -1,0 +1,66 @@
+/*
+	Name: Print Stylesheet
+	Description: Printer friendly rules.
+				 Remove floats, backgrounds and font
+				 styles to make printing a charm.
+				 Based on Eric Meyer's ALA's great articles here:
+				 http://www.alistapart.com/articles/goingtoprint/
+				 http://www.alistapart.com/articles/alaprintstyles
+	Coder: Jonathan Smith
+	Coder URI: http://jhuskisson.com
+*/
+
+/*
+	Note to author:
+
+	Large printed elements (like content)
+	should NOT be floated.
+	Double check.
+*/
+
+/* Global Styles
+===============================================*/
+body {
+	background: #fff;
+	color: #000;
+	font-size: 12pt;
+	line-height: 16pt;
+}
+
+/* Links
+-----------------------------------------------*/
+a:link, a:visited {
+	color: #036;
+	background: transparent;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#body a:link:after, #body a:visited:after {
+	content: " (" attr(href) ") ";
+	font-size: 90%;
+}
+
+#body a[href^="/"]:after {
+  content: " (http://www.website.com" attr(href) ") ";
+}
+
+/* Layout
+===============================================*/
+#menu, #nav, nav, .nav {
+	display: none !important;
+}
+
+body, #header, #body, #footer, section, .contents {
+	float: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: auto !important;
+}
+	
+#body {
+	background: transparent;
+	border: 0;
+	color: black;
+	margin: 0 12.5% !important;
+}
